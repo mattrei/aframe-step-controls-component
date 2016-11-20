@@ -6,7 +6,14 @@
   <body>
     <a-scene>
       <a-assets></a-assets>
-      <a-entity geometry="primitive: box" material="color: #C03546"></a-entity>
+      <a-entity camera
+        position="0 0 3"
+        step-controls
+        wasd-controls
+        look-controls>
+      </a-entity>
+      <a-entity geometry="primitive: box" material="color: #C03546">
+      </a-entity>
     </a-scene>
 
     <!-- GitHub Corner. -->

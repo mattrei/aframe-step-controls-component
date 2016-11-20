@@ -1,5 +1,5 @@
 {
-  "name": "aframe-example-component",
+  "name": "aframe-step-controls-component",
   "version": "1.0.0",
   "description": "Example component for A-Frame.",
   "main": "index.js",
