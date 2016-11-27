@@ -39,7 +39,7 @@ AFRAME.registerComponent('step-controls', {
         accThreshold: {
             default: 0.8
         },
-        rollThreshold: {
+        backwardsPitchThreshold: {
             default: 1.0
         },
         timeThreshold: {
@@ -139,15 +139,14 @@ AFRAME.registerComponent('step-controls', {
                     this.acceleration = mag * data.acceleration;
 
                     var dirSign = 1;
-                    var rollSubtract = 0;
-                    var roll = Math.abs(rotation[data.rollAxis]);
-                    if (roll <= data.rollThreshold) {
+                    var pitch = Math.abs(rotation[data.rollAxis]); // wrong naming
+                    if (pitch <= data.backwardsPitchThreshold) {
                       console.log("BACKWARDS " + roll);
                       // TODO correct
                       dirSign = -1;
-                      rollSubtract = roll;
                     } else {
                       console.log("FORWARD");
+                      pitch = 0;
                     }
 
                     this.acceleration *= dirSign;
@@ -157,7 +156,8 @@ AFRAME.registerComponent('step-controls', {
                     delta = delta / 1000;
                     this.updateVelocity(delta);
 
-                    var movementVector = this.getMovementVector(delta, rollSubtract);
+                    // TODO necessary?
+                    var movementVector = this.getMovementVector(delta, pitch);
                     console.log(movementVector)
 
                     var el = this.el;
