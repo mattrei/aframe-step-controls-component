@@ -1,10 +1,9 @@
 ## aframe-step-controls-component
 
+http://stanford.edu/class/ee267/Spring2016/report_mago_karaouni.pdf
+
 Thesis:
 http://eelke.com/files/pubs/vr-step.pdf
-
-Stepping Alogrithm:
-http://www.analog.com/media/en/technical-documentation/technical-articles/pedometer.pdf
 
 > This is not at all means required for writing an A-Frame component. It is intended for publishing and sharing a component for the community to re-use.
 
